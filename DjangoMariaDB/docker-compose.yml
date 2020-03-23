@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  db:
+    image: mariadb/server:10.4
+    restart: always
+    #command:
+    environment:
+      - MYSQL_HOST=localhost
+      - MYSQL_PORT=3306  # cannot change this port to other number
+      - MYSQL_DATABASE=dbapi # name you want for the database
+      - MYSQL_USER=dbuser # change to whatever username you want
+      - MYSQL_PASSWORD=Usr@2020.. #change to the password you want for user
+      - MYSQL_ROOT_PASSWORD=Rt@2020.. #change to good root password
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./db/files:/var/lib/mysql"
+      - "./db/config:/etc/mysql/conf.d"
+  app:
+    build:
+      context: .
+    ports:
+      - "80:8000"
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
