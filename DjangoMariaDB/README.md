@@ -66,7 +66,7 @@ docker exec containername python manage.py migrate
 
 
 
-cmd /c --% docker exec -i 0666ae9b982e mysql -u dbuser -pUsr@2020.. --default-character-set=utf8  dbapi < D:\DjangoMariaDB\api_users.sql
+cmd /c --% docker exec -i 0666ae9b982e mysql -u dbuser -pUsr@2020.. --default-character-set=utf8  dbapi < D:\DjangoMariaDB\movies.sql
 
 docker exec 60aa3b8d3d13 python manage.py makemigrations
 

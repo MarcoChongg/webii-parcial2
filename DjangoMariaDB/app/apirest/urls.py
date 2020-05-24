@@ -18,6 +18,6 @@ from django.urls import include, path
 from rest_framework import routers, serializers, viewsets
 
 urlpatterns = [
-    path('1.0/', include('firstapp.urls')),
+    path('', include('firstapp.urls')),
     path('admin/', admin.site.urls),
 ]

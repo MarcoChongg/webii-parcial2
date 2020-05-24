@@ -1,0 +1,15 @@
+{% include "header.html" %}
+
+<ul class="tilesWrap">
+	{% for i in movies %}
+	    <li>
+				<h3>{{ i.movietitle }}</h3>
+				<h2> <div class="center" style="background-image: url({{i.imageurl}});"> <img src={{i.imageurl}}>  </div> </h2>
+				<p>{{i.description}} </p>
+			</li>
+	{% endfor %}
+</ul>
+
+<br><br>
+
+{% include "footer.html" %}

@@ -3,7 +3,7 @@
 from .models import Movie,ApiUsers
 
 #IMPORT LIBRARIRES/FUNCTIONS
-#from django.shortcuts import render , HttpResponse
+from django.shortcuts import render , HttpResponse
 from django.http import JsonResponse
 import json
 from firstapp.customClasses import *
@@ -11,6 +11,20 @@ from firstapp.customClasses import *
 from django.contrib.auth.hashers import make_password, check_password
 
 #check_password(noHashPassword,HashedPassword) this funcion validate if the password match to the hash
+
+#def vista(request):
+#    return render(request, 'clase.html', )
+
+def vista(request):
+
+    #https://docs.djangoproject.com/en/3.0/ref/templates/language/#templates
+    return render(request, 'clase.html', {'title': "Bumblebee" , 'movies': Movie.objects.all()})
+
+
+def vista2(request):
+
+    #https://docs.djangoproject.com/en/3.0/ref/templates/language/#templates
+    return render(request, 'dos.html', {'title': "Bumblebee" , 'movies': Movie.objects.all()})
 
 def login(request):
 
